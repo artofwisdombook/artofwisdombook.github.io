@@ -4,7 +4,7 @@
 <meta name="description" content="The Art of Wisdom by John Wageh Shenouda: a practical guide to clearer thinking, better decisions and a more meaningful life. Digital PDF with a 30-day workbook.">
 <meta property="og:title" content="The Art of Wisdom"><meta property="og:description" content="Think clearer. Choose better. A practical guide with a 30-day workbook."><meta property="og:image" content="cover.jpg">
 <link rel="icon" href="logo.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a1233"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
-<style>
+<script>if('IntersectionObserver' in window)document.documentElement.className='js'</script><style>
 :root{--navy:#0a1233;--navy2:#111c4a;--gold:#e8be64;--gold2:#f6dc9b;--ink:#f5f5f0;--mute:#b9c1dc;--line:#26367a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--navy);color:var(--ink);font:18px/1.65 "Noto Sans",system-ui,Segoe UI,Arial,sans-serif;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
@@ -54,10 +54,10 @@ ol.ch li:before{content:counter(c,decimal-leading-zero);position:absolute;left:1
 footer{padding:34px 0 90px;color:var(--mute);font-size:15px;text-align:center;border-top:1px solid var(--line)}footer a{margin:0 8px}
 #sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(10,18,51,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none;z-index:15;transform:translateY(110%);transition:transform .35s}
 #sticky.show{transform:none}#sticky .btn{display:block;text-align:center;padding:13px}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.x .rv,.x .rv.in{opacity:1;transform:none}.js .rv.in{opacity:1;transform:none}
 @media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}#sticky{display:block}section{padding:54px 0}ol.ch{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
 </style></head><body>
 <div id="bar"></div>
 <nav><div class="wrap"><b><img src="logo.png" alt="">The Art of Wisdom</b><a class="btn sm" href="https://john157.gumroad.com/l/bjazpd">Get the book</a></div></nav>
@@ -109,8 +109,8 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}
 let dp;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;const b=document.getElementById('installBtn');b.style.display='inline-block';b.onclick=()=>{dp.prompt()}});
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 // reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);const n=e.target.querySelector('[data-n]');if(n)count(n)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+window.__io=1;const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);const n=e.target.querySelector('[data-n]');if(n)count(n)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')}),2500);
 function count(n){const t=+n.dataset.n;if(RM){n.textContent=t;return}let i=0;const s=Math.max(1,Math.round(t/20));const id=setInterval(()=>{i=Math.min(t,i+s);n.textContent=i;if(i>=t)clearInterval(id)},45)}
 // progress bar + sticky cta
 const bar=document.getElementById('bar'),st=document.getElementById('sticky');
