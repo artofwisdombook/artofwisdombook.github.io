@@ -1,79 +1,132 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Art of Wisdom | A practical guide to clearer thinking and better decisions</title>
 <meta name="description" content="The Art of Wisdom by John Wageh Shenouda: a practical guide to clearer thinking, better decisions and a more meaningful life. Digital PDF with a 30-day workbook.">
 <meta property="og:title" content="The Art of Wisdom"><meta property="og:description" content="Think clearer. Choose better. A practical guide with a 30-day workbook."><meta property="og:image" content="cover.jpg">
-<link rel="icon" href="logo.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0d193f"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="logo.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a1233"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
 <style>
-:root{--navy:#0d193f;--navy2:#142257;--gold:#e8be64;--ink:#f5f5f0;--mute:#b9c1dc}
+:root{--navy:#0a1233;--navy2:#111c4a;--gold:#e8be64;--gold2:#f6dc9b;--ink:#f5f5f0;--mute:#b9c1dc;--line:#26367a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--navy);color:var(--ink);font:18px/1.6 "Noto Sans",system-ui,Segoe UI,Arial,sans-serif}
-h1,h2,h3{font-family:"Noto Serif",Georgia,serif;line-height:1.2;margin:0 0 .5em}
-a{color:var(--gold)}.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;background:rgba(13,25,63,.94);backdrop-filter:blur(6px);z-index:5;border-bottom:1px solid #24336e}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+body{margin:0;background:var(--navy);color:var(--ink);font:18px/1.65 "Noto Sans",system-ui,Segoe UI,Arial,sans-serif;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+h1,h2,h3{font-family:"Noto Serif",Georgia,serif;line-height:1.15;margin:0 0 .5em}
+a{color:var(--gold)}.wrap{max-width:1080px;margin:0 auto;padding:0 22px;position:relative}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:20}
+nav{position:sticky;top:0;background:rgba(10,18,51,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
 nav b{font-family:Georgia,serif;color:var(--gold);display:flex;gap:10px;align-items:center}nav img{height:34px;border-radius:50%}
-.btn{display:inline-block;background:var(--gold);color:#101a3d;font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;font-size:18px;box-shadow:0 6px 24px rgba(232,190,100,.25);transition:.15s}
-.btn:hover{transform:translateY(-2px)}.btn.sm{padding:9px 18px;font-size:15px}
-.hero{padding:56px 0 40px}.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(34px,5vw,56px)}.hero h1 span{color:var(--gold)}
-.hero p{color:var(--mute);font-size:20px}.hero img{width:100%;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5);object-fit:cover}
-.note{font-size:15px;color:var(--mute);margin-top:14px}
-section{padding:56px 0}section.alt{background:var(--navy2)}
-h2{font-size:clamp(28px,4vw,40px);color:var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:#101d4d;border:1px solid #2a3b7a;border-radius:16px;padding:22px}.card h3{font-size:21px;color:var(--ink)}.card p{color:var(--mute);margin:0}
-.soc{display:flex;flex-wrap:wrap;gap:12px}.soc a{border:1px solid #3a4d94;background:#101d4d;color:var(--ink);text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;transition:.15s}.soc a:hover{border-color:var(--gold);color:var(--gold)}
-section.alt .card{background:var(--navy)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#101a3d;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;font-size:18px;box-shadow:0 8px 28px rgba(232,190,100,.28);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(232,190,100,.4)}.btn.sm{padding:9px 18px;font-size:15px}
+.btn:after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s infinite}
+@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}.ghost:after{display:none}
+.hero{position:relative;padding:70px 0 60px;overflow:hidden;background:radial-gradient(900px 500px at 80% 20%,#1a2c72 0,transparent 60%),radial-gradient(700px 400px at 0% 100%,#16276a 0,transparent 60%)}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(36px,5.6vw,62px)}.hero h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:200% center}}
+.hero p{color:var(--mute);font-size:20px}.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.note{font-size:15px;color:var(--mute);margin-top:16px}
+.book{perspective:1000px;display:flex;justify-content:center}
+.book .tilt{width:100%;max-width:460px;transform-style:preserve-3d;transition:transform .15s;animation:float 6s ease-in-out infinite}
+.book img{width:100%;display:block;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 80px rgba(232,190,100,.15);object-fit:cover}
+@keyframes float{50%{translate:0 -12px}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-26px;position:relative;z-index:2}
+.stat{background:linear-gradient(180deg,#14216a,#0f1a52);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.stat b{display:block;font:700 clamp(30px,5vw,44px) Georgia,serif;color:var(--gold)}.stat span{color:var(--mute);font-size:15px}
+section{padding:72px 0}section.alt{background:var(--navy2)}
+h2{font-size:clamp(28px,4vw,42px);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px}
+.card{background:#0e1a4a;border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.card h3{font-size:21px}.card p{color:var(--mute);margin:0}
+.quote{min-height:190px;display:flex;align-items:center;justify-content:center;text-align:center}
+.quote blockquote{margin:0;font:italic clamp(24px,3.6vw,38px)/1.35 Georgia,serif;max-width:820px;transition:opacity .6s,transform .6s}
+.quote blockquote.out{opacity:0;transform:translateY(10px)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:18px}.dots i{width:8px;height:8px;border-radius:50%;background:#33458c;transition:.3s}.dots i.on{background:var(--gold);width:26px;border-radius:8px}
 ol.ch{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;counter-reset:c}
-ol.ch li{counter-increment:c;background:var(--navy);border:1px solid #2a3b7a;border-radius:12px;padding:14px 18px 14px 64px;position:relative}
-ol.ch li:before{content:counter(c,decimal-leading-zero);position:absolute;left:18px;top:12px;font:700 22px Georgia,serif;color:var(--gold)}
+ol.ch li{counter-increment:c;background:#0e1a4a;border:1px solid var(--line);border-radius:14px;padding:15px 18px 15px 66px;position:relative;transition:transform .2s,border-color .2s}
+ol.ch li:hover{transform:translateX(6px);border-color:var(--gold)}
+ol.ch li:before{content:counter(c,decimal-leading-zero);position:absolute;left:18px;top:12px;font:700 24px Georgia,serif;color:var(--gold)}
 .vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.vids video{width:100%;border-radius:14px;background:#000;border:1px solid #2a3b7a}
-.cta{text-align:center}.cta p{color:var(--mute);max-width:640px;margin:0 auto 24px}
-footer{padding:34px 0;color:var(--mute);font-size:15px;text-align:center;border-top:1px solid #24336e}
-footer a{margin:0 8px}
-@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.hero img{}}
+.vids video{width:100%;border-radius:16px;background:#000;border:1px solid var(--line);transition:transform .25s}.vids video:hover{transform:scale(1.02)}
+.soc{display:flex;flex-wrap:wrap;gap:12px}.soc a{border:1px solid #3a4d94;background:#0e1a4a;color:var(--ink);text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;transition:.2s}.soc a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.cta{text-align:center;background:radial-gradient(600px 300px at 50% 0,#1b2d78 0,transparent 70%)}.cta p{color:var(--mute);max-width:640px;margin:0 auto 26px}
+footer{padding:34px 0 90px;color:var(--mute);font-size:15px;text-align:center;border-top:1px solid var(--line)}footer a{margin:0 8px}
+#sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(10,18,51,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none;z-index:15;transform:translateY(110%);transition:transform .35s}
+#sticky.show{transform:none}#sticky .btn{display:block;text-align:center;padding:13px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}#sticky{display:block}section{padding:54px 0}ol.ch{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style></head><body>
+<div id="bar"></div>
 <nav><div class="wrap"><b><img src="logo.png" alt="">The Art of Wisdom</b><a class="btn sm" href="https://john157.gumroad.com/l/bjazpd">Get the book</a></div></nav>
-<header class="hero"><div class="wrap"><div>
-<h1>Knowing more does not mean <span>choosing better.</span></h1>
-<p>The Art of Wisdom is a practical guide to clearer thinking, better decisions and a more meaningful life. Real methods, reflection questions and a 30-day workbook.</p>
-<p><a class="btn" href="https://john157.gumroad.com/l/bjazpd">Get the digital book</a></p>
-<div class="note">Digital PDF. Book plus 30-day workbook. By John Wageh Shenouda.</div></div>
-<img src="cover.jpg" alt="The Art of Wisdom book cover"></div></header>
-<section class="alt" id="inside"><div class="wrap"><h2>What you get</h2><div class="grid">
-<div class="card"><h3>A practical guide</h3><p>Ten chapters on wisdom, judgment, habits, relationships, money, decisions and resilience.</p></div>
-<div class="card"><h3>Tools you can use</h3><p>Reflection prompts, practical decision tools and chapter exercises you can test in real life.</p></div>
-<div class="card"><h3>A 30-day workbook</h3><p>One small step a day to turn ideas into habits, plus a personal wisdom plan.</p></div>
-<div class="card"><h3>Read at your pace</h3><p>One chapter at a time. Mark one idea that challenges you and one action to try.</p></div></div></div></section>
-<section id="chapters"><div class="wrap"><h2>The ten chapters</h2><ol class="ch">
-<li>What Is Wisdom?</li><li>The Pillars Of True Wisdom</li><li>Wisdom Vs. Intelligence</li><li>How To Cultivate Wisdom Daily</li><li>The Wise Path To Relationships</li><li>Wisdom And Wealth: Winning With Integrity</li><li>Decision-Making: The Wise Advantage</li><li>Overcoming Challenges With Wisdom</li><li>Living A Legacy Of Wisdom</li><li>Choosing The Wise Way, Every Day</li></ol></div></section>
-<section class="alt" id="watch"><div class="wrap"><h2>Watch a quick idea</h2><p style="color:var(--mute)">Short clips from the book. Tap to play.</p>
+<header class="hero"><canvas id="fx"></canvas><div class="wrap"><div>
+<h1 class="rv">Knowing more does not mean <span>choosing better.</span></h1>
+<p class="rv" style="--d:.12s">The Art of Wisdom is a practical guide to clearer thinking, better decisions and a more meaningful life. Real methods, reflection questions and a 30-day workbook.</p>
+<div class="cta-row rv" style="--d:.24s"><a class="btn" href="https://john157.gumroad.com/l/bjazpd">Get the digital book</a><a class="btn ghost" href="#watch">Watch a quick idea</a></div>
+<div class="note rv" style="--d:.32s">Digital PDF. Book plus 30-day workbook. By John Wageh Shenouda.</div></div>
+<div class="book rv" style="--d:.15s"><div class="tilt" id="tilt"><img src="cover.jpg" alt="The Art of Wisdom book cover" fetchpriority="high"></div></div></div></header>
+<div class="wrap"><div class="stats">
+<div class="stat rv"><b data-n="10">0</b><span>chapters</span></div>
+<div class="stat rv" style="--d:.1s"><b data-n="30">0</b><span>day workbook</span></div>
+<div class="stat rv" style="--d:.2s"><b data-n="1">0</b><span>method for clearer decisions</span></div></div></div>
+<section class="quote-s"><div class="wrap"><div class="quote"><blockquote id="q">Knowledge tells you what is known; wisdom helps you decide what matters.</blockquote></div><div class="dots" id="dots"></div></div></section>
+<section class="alt" id="inside"><div class="wrap"><h2 class="rv">What you get</h2><div class="grid">
+<div class="card rv"><h3>A practical guide</h3><p>Ten chapters on wisdom, judgment, habits, relationships, money, decisions and resilience.</p></div>
+<div class="card rv" style="--d:.08s"><h3>Tools you can use</h3><p>Reflection prompts, practical decision tools and chapter exercises you can test in real life.</p></div>
+<div class="card rv" style="--d:.16s"><h3>A 30-day workbook</h3><p>One small step a day to turn ideas into habits, plus a personal wisdom plan.</p></div>
+<div class="card rv" style="--d:.24s"><h3>Read at your pace</h3><p>One chapter at a time. Mark one idea that challenges you and one action to try.</p></div></div></div></section>
+<section id="chapters"><div class="wrap"><h2 class="rv">The ten chapters</h2><ol class="ch">
+<li class="rv">What Is Wisdom?</li><li class="rv" style="--d:.05s">The Pillars Of True Wisdom</li><li class="rv">Wisdom Vs. Intelligence</li><li class="rv" style="--d:.05s">How To Cultivate Wisdom Daily</li><li class="rv">The Wise Path To Relationships</li><li class="rv" style="--d:.05s">Wisdom And Wealth: Winning With Integrity</li><li class="rv">Decision-Making: The Wise Advantage</li><li class="rv" style="--d:.05s">Overcoming Challenges With Wisdom</li><li class="rv">Living A Legacy Of Wisdom</li><li class="rv" style="--d:.05s">Choosing The Wise Way, Every Day</li></ol></div></section>
+<section class="alt" id="watch"><div class="wrap"><h2 class="rv">Watch a quick idea</h2><p class="rv" style="color:var(--mute)">Short clips from the book. Tap to play.</p>
 <div class="vids">
-<video controls preload="metadata" playsinline src="reel14_smart_hook.mp4"></video>
-<video controls preload="metadata" playsinline src="reel07_five_questions.mp4"></video>
-<video controls preload="metadata" playsinline src="reel16_curiosity_hook.mp4"></video>
-<video controls preload="metadata" playsinline src="reel17_result_hook.mp4"></video></div></div></section>
-<section><div class="wrap"><h2>About the author</h2><p style="max-width:760px">John Wageh Shenouda wrote The Art of Wisdom as a realistic guide for people who want to think clearly and act well. The book does not promise a life without mistakes or loss. It offers a way to meet them with more awareness, stronger judgment and a deeper commitment to your values.</p></div></section>
-<section id="follow"><div class="wrap"><h2>Follow The Art of Wisdom</h2><p style="color:var(--mute)">Daily ideas on clearer thinking and better decisions.</p>
-<div class="soc">
+<video class="rv" controls preload="none" poster="cover.jpg" playsinline src="reel14_smart_hook.mp4"></video>
+<video class="rv" style="--d:.08s" controls preload="none" poster="cover.jpg" playsinline src="reel07_five_questions.mp4"></video>
+<video class="rv" style="--d:.16s" controls preload="none" poster="cover.jpg" playsinline src="reel16_curiosity_hook.mp4"></video>
+<video class="rv" style="--d:.24s" controls preload="none" poster="cover.jpg" playsinline src="reel17_result_hook.mp4"></video></div></div></section>
+<section><div class="wrap"><h2 class="rv">About the author</h2><p class="rv" style="max-width:760px">John Wageh Shenouda wrote The Art of Wisdom as a realistic guide for people who want to think clearly and act well. The book does not promise a life without mistakes or loss. It offers a way to meet them with more awareness, stronger judgment and a deeper commitment to your values.</p></div></section>
+<section class="alt" id="follow"><div class="wrap"><h2 class="rv">Follow The Art of Wisdom</h2><p class="rv" style="color:var(--mute)">Daily ideas on clearer thinking and better decisions.</p>
+<div class="soc rv">
 <a href="https://www.instagram.com/artofwisdom.book/">Instagram</a>
 <a href="https://www.youtube.com/@ArtOfWisdomBook">YouTube</a>
 <a href="https://www.tiktok.com/@artofwisdom.book">TikTok</a>
-<a href="https://www.facebook.com/profile.php?id=1480078788528141">Facebook</a>
+<a href="https://www.facebook.com/profile.php?id=61596794015767">Facebook</a>
 <a href="https://www.pinterest.com/artofwisdombook/">Pinterest</a>
 <a href="https://www.threads.com/@artofwisdom.book">Threads</a>
 <a href="https://medium.com/@johnwagehshenouda">Medium</a>
 <a href="https://artofwisdombook.substack.com">Substack</a>
 <a href="https://www.linkedin.com/in/john-wageh-shenouda-b2103a452">LinkedIn</a></div></div></section>
-<section class="alt" id="install"><div class="wrap"><h2>Add it to your phone</h2><p style="color:var(--mute);max-width:700px">Install this page as an app. No app store needed. It opens full screen and always shows the latest version of the book page.</p>
-<p><button class="btn" id="installBtn" style="border:0;cursor:pointer;display:none">Install the app</button></p>
+<section id="install"><div class="wrap"><h2 class="rv">Add it to your phone</h2><p class="rv" style="color:var(--mute);max-width:700px">Install this page as an app. No app store needed. It opens full screen and always shows the latest version of the book page.</p>
+<p><button class="btn" id="installBtn" style="display:none">Install the app</button></p>
 <p class="note" id="installHelp">On iPhone: tap Share, then Add to Home Screen. On Android: open the browser menu, then Install app or Add to Home screen.</p></div></section>
-<section class="cta"><div class="wrap"><h2>Think clearer. Choose better.</h2><p>Get the digital book and the 30-day workbook. The checkout runs securely on Gumroad.</p><a class="btn" href="https://john157.gumroad.com/l/bjazpd">Get the book on Gumroad</a></div></section>
+<section class="cta alt"><div class="wrap"><h2 class="rv">Think clearer. Choose better.</h2><p class="rv">Get the digital book and the 30-day workbook. The checkout runs securely on Gumroad.</p><a class="btn rv" href="https://john157.gumroad.com/l/bjazpd">Get the book on Gumroad</a></div></section>
 <footer><div class="wrap">The Art of Wisdom by John Wageh Shenouda<br>
 <a href="https://www.instagram.com/artofwisdom.book/">Instagram</a><a href="https://www.youtube.com/@ArtOfWisdomBook">YouTube</a><a href="https://artofwisdombook.substack.com">Substack</a><a href="https://medium.com/@johnwagehshenouda">Medium</a></div></footer>
+<div id="sticky"><a class="btn" href="https://john157.gumroad.com/l/bjazpd">Get the book</a></div>
 <script>
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}
 let dp;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;const b=document.getElementById('installBtn');b.style.display='inline-block';b.onclick=()=>{dp.prompt()}});
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);const n=e.target.querySelector('[data-n]');if(n)count(n)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function count(n){const t=+n.dataset.n;if(RM){n.textContent=t;return}let i=0;const s=Math.max(1,Math.round(t/20));const id=setInterval(()=>{i=Math.min(t,i+s);n.textContent=i;if(i>=t)clearInterval(id)},45)}
+// progress bar + sticky cta
+const bar=document.getElementById('bar'),st=document.getElementById('sticky');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';st.classList.toggle('show',h.scrollTop>500)},{passive:true});
+// quote rotator
+const Q=["Knowledge tells you what is known; wisdom helps you decide what matters.","Perception without judgment becomes endless observation.","Wisdom is a practice of returning to clarity.","The wise path is not always the easiest.","Wisdom is the disciplined art of seeing clearly.","Just because you can doesn't mean you should."];
+const q=document.getElementById('q'),dots=document.getElementById('dots');let qi=0;
+Q.forEach((_,i)=>{const d=document.createElement('i');if(!i)d.className='on';dots.appendChild(d)});
+if(!RM)setInterval(()=>{q.classList.add('out');setTimeout(()=>{qi=(qi+1)%Q.length;q.textContent=Q[qi];[...dots.children].forEach((d,i)=>d.className=i===qi?'on':'');q.classList.remove('out')},600)},4500);
+// book tilt
+const tl=document.getElementById('tilt');
+if(!RM&&matchMedia('(hover:hover)').matches){addEventListener('mousemove',e=>{const r=tl.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;if(Math.abs(x)<1.2&&Math.abs(y)<1.2)tl.style.transform='rotateY('+x*14+'deg) rotateX('+(-y*10)+'deg)'})}
+// gold particles
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let P=[],W,H;
+function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;P=Array.from({length:Math.min(45,Math.round(W/30))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+.4,v:Math.random()*.25+.08,a:Math.random()*.5+.15}))}
+rs();addEventListener('resize',rs);
+function draw(){cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.v;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fillStyle='rgba(232,190,100,'+p.a+')';cx.fill()}if(!document.hidden)requestAnimationFrame(draw);else setTimeout(draw,500)}
+if(!RM)draw();
 </script></body></html>
